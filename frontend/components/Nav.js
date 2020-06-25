@@ -9,7 +9,9 @@ import CartCount from './CartCount';
 const Nav = () => (
 
     <User>
-        {({ data: { me } }) => (
+        {({ data }) => {
+            const me = data ? data.me : null;
+            return  (
             <NavStyles data-test="nav">
                 <Link href="/items">
                     <a>Shop</a>
@@ -44,7 +46,7 @@ const Nav = () => (
                 )}
 
             </NavStyles>
-        )}
+            )}}
     </User>
 );
 
