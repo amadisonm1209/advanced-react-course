@@ -29,7 +29,10 @@ class Signin extends Component {
             >
                 {(reset, { error, loading , called}) => {
              return (
-             <Form method="post" onSubmit={ async (e) => {
+             <Form 
+             method="post" 
+             data-test="form"
+             onSubmit={ async (e) => {
                  e.preventDefault();
                  await reset();
                  this.setState({email: ''});
@@ -57,3 +60,4 @@ class Signin extends Component {
 }
 
 export default Signin;
+export { REQUEST_RESET_MUTATION };

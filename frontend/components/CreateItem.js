@@ -63,7 +63,8 @@ class CreateItem extends Component {
             <Mutation mutation={CREATE_ITEM_MUTATION} variables=
                 {this.state}>
                 {(createItem, { loading, error }) => (
-                    <Form 
+                    <Form
+                    data-test="test" 
                     onSubmit={async e => {
                         //stop the form from submitting
                         e.preventDefault();
