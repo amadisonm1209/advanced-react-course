@@ -8,9 +8,11 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "test": "NODE_ENV=test jest --watch",
-    "test-win": "SET NODE_ENV=test&& jest --watch",
     "heroku-postbuild": "next build"
   },
+    "engines": {
+      "node": "10.x"
+    },
   "author": "",
   "license": "ISC",
   "dependencies": {
