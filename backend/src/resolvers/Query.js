@@ -47,11 +47,12 @@ const Query = {
     if(!userId) {
       throw new Error('You must be signed in!')
     }
-    return ctx.db.Query.orders({
+    const orders = await ctx.db.query.orders({
       where: {
         user: { id: userId }
       }
-    }, info)
+    }, info);
+    return orders;
   }
 };
 
