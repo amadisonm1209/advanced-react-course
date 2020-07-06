@@ -76,7 +76,7 @@ const Mutations = {
         //return user to the browser
         return user;
     },
-    async signin(parents, { email, password }, ctx, info) {
+    async signin(parent, { email, password }, ctx, info) {
         //check if there is a user with that email
         const user = await ctx.db.query.user({ where: { email }});
         if (!user) {
@@ -95,6 +95,7 @@ const Mutations = {
             maxAge: 1000 * 60 * 60 * 24 * 365
         });
         //return the user
+        console.log(user);
         return user;
     },
     signout(parent, args, ctx, info) {

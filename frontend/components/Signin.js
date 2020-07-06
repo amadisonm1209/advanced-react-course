@@ -32,12 +32,13 @@ class Signin extends Component {
             mutation={SIGNIN_MUTATION} 
             variables={this.state}
             refetchQueries={[{ query: CURRENT_USER_QUERY }]}
+    
             >
                 {(signup, { error, loading }) => {
              return (
              <Form method="post" onSubmit={ async (e) => {
                  e.preventDefault();
-                 await signup();
+                 const res = await signup();
                  this.setState({ name: '', email: '', password: '' });
              }}>
                 <fieldset disabled={loading} aria-busy={loading}>
