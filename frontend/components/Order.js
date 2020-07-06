@@ -29,8 +29,8 @@ class Order extends Component {
         return (
             <Query query={SINGLE_ORDER_QUERY} variables={{ id: this.props.id }}>
                 {({ data, error, loading }) => {
-                    if (error) return <Error error={error} />
-                    if (loading) return <p>Loading...</p>
+                    if (error) return <Error error={error} />;
+                    if (loading) return <p>Loading...</p>;
                     const order = data.order;
                     return (
                         <OrderStyles>
